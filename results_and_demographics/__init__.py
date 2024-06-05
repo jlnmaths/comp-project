@@ -95,16 +95,12 @@ class Player(BasePlayer):
 # PAGES
 class Demographics(Page):
     form_model = 'player'
-    form_fields = ['yearOfBirth', 'male', 'country', 'education', 'study', 'politics']
+    form_fields = ['yearOfBirth', 'male', 'country', 'education', 'study', 'RiskSurvey']
 
     def vars_for_template(player: Player):
         import time
         player.startdemotime = int(time.time())
         return dict()
-
-class Risk_Narratives(Page):
-    form_model = 'player'
-    form_fields = ['RiskSurvey', 'HintHelpful', 'HintMisleading', 'simplicity_1', 'simplicity_2', 'dataverbal_1', 'dataverbal_2']
 
 class ResultsWaitPage(WaitPage):
     pass
@@ -112,10 +108,7 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     @staticmethod
     def vars_for_template(player: Player):
-        import time
-        player.finishexptime = int(time.time())
 
-        combined_link = player.subsession.session.config['limesurvey_link'] + f'&PAYMENTCODE={player.participant.label}'
-        return dict(combined_link=combined_link)
+        return dict()
 
-page_sequence = [Demographics, Risk_Narratives, Results]
+page_sequence = [Demographics, Results]

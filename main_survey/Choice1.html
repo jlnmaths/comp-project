@@ -1,0 +1,97 @@
+{{ block title }}
+    Phase 1
+{{ endblock }}
+{{ block content }}
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your First Choice</title>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    background-color: #f5f5f5;
+  }
+
+  #challengeSection {
+    display: none;
+  }
+
+  .container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .column {
+    flex: 1;
+    align-items: left;
+    padding: 10px;
+  }
+
+  .image {
+    max-width: 100%;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  input[type="text"], input[type="radio"] {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+
+  table tr:nth-last-child(2) {
+    border-bottom: 2px double black;
+  }
+
+  th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="column">
+          <label for="assessment">Which percentage of your assets do you want to invest into the risky asset?
+          </label>
+          <input type="text" id="assessment" name="assessment"> %.
+              {{ formfield_errors 'assessment' }}
+      </div>
+    </div>
+
+<button class="otree-btn-next btn btn-primary">Next</button>
+
+  </div>
+</body>
+{{  endblock  }}

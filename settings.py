@@ -3,8 +3,8 @@ from os import environ
 
 SESSION_CONFIGS = [
     dict(
-        name='Mental_Models_Experiment',
-        display_name="Mental_Models_Experiment",
+        name='Comp4_Experiment',
+        display_name="Comp4_Experiment",
         app_sequence=['main_survey', 'results_and_demographics'],
         num_demo_participants=250,
     )
@@ -16,11 +16,10 @@ SESSION_CONFIGS = [
 # e.g. self.session.config['participation_fee']
 
 SESSION_CONFIG_DEFAULTS = dict(
-    {'limesurvey_link': 'https://limesurvey.urz.uni-heidelberg.de/index.php/114547?lang=de'},
     real_world_currency_per_point=1.00, participation_fee=0.00, doc="",
 )
 
-PARTICIPANT_FIELDS = ['true_y', 'payround', 'treatment', 'order', 'order_2', 'sorder']
+PARTICIPANT_FIELDS = ['payround', 'risky', 'safe']
 SESSION_FIELDS = []
 
 # ISO-639 code
